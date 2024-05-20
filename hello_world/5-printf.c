@@ -1,14 +1,12 @@
 #include <stdio.h>
 
 /**
- * main - Will print an exact line using printf
+ * main - Prints a simple phrase using the main function
  *
  * Return: 0
  */
-
 int main(void)
 {
-	printf ("with proper grammar, but the outcome is a piece of art, ");
-
-	return 0;
+printf("with proper grammar, but the outcome is a piece of art,\n");
+return (0);
 }
