@@ -1,17 +1,21 @@
 #include <stdio.h>
 
-int main(void) {
-    int i;
+/**
+ * main - prints the alphabet using putchar
+ *
+ * Return: 0
+ */
 
-    /* Loop through the ASCII values of lowercase letters */
-    for (i = 'a'; i <= 'z'; i++) {
-        /* Print each letter using putchar */
-        putchar(i);
-    }
+int main(void)
+{
+	char letter;
 
-    /* Newline character */
-    putchar('\n');
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		putchar(letter);
+	}
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
 
