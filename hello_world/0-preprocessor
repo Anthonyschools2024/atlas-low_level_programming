@@ -1,10 +1,2 @@
-#!/bin/bash
-
-# Ensure gcc or clang is installed
-if! command -v gcc &> /dev/null; then
-    echo "gcc could not be found"
-    exit
-fi
-
-# Preprocess the C file and redirect the output to a new file named 'c'
-$CFILE | cpp > c
+#!/bin/bas
+gcc -E $CFILE -o c
