@@ -1,32 +1,37 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
- * main - assigns a random number to the variable n each time it is executed
- * and prints the last digit of the number stored in the variable n
+ * main - prints a string based on the last digit
+ * in a randomized variable
  *
  * Return: 0
  */
 int main(void)
 {
-    int n;
+	int n, lastdigit;
+	char *str;
 
-    srand(time(0));
-    n = rand() - RAND_MAX / 2;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-    // Extracting the last digit of n
-    int lastDigit = abs(n % 10);
+	lastdigit = n % 10;
 
-    printf("Last digit of %d is ", n);
+	if (lastdigit > 5)
+	{
+		str = "and is greater than 5\n";
+	}
+	else if (lastdigit == 0)
+	{
+		str = "and is 0\n";
+	}
+	else
+	{
+		str = "and is less than 6 and not 0\n";
+	}
 
-    if (lastDigit > 5) {
-        printf("and is greater than 5\n");
-    } else if (lastDigit == 0) {
-        printf("and is 0\n");
-    } else {
-        printf("and is less than 6 and not 0\n");
-    }
+	printf("Last digit of %d is %d %s", n, lastdigit, str);
 
-    return (0);
+	return (0);
 }
