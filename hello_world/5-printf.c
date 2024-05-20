@@ -1,17 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - Prints a piece of art with proper grammar
+ * main - Will print an exact line using printf
  *
- * Return: 0 on success
+ * Return: 0
  */
+
 int main(void)
 {
-    printf("In the vast expanse of the digital canvas,\n\
-            pixels dance in a symphony of colors.\n\
-            Each stroke, a testament to creativity.\n\
-            A masterpiece unfolds, pixel by pixel.\n\
-            Art, born from the binary ballet.\n\n");
+	printf ("with proper grammar, but the outcome is a piece of art, ");
 
-    return 0;
+	return 0;
 }
