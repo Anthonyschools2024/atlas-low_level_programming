@@ -1,21 +1,26 @@
 #include <stdio.h>
 
-int main() {
-    char letter;
+/**
+ * main - prints the alphabet using putchar
+ * except two letters
+ *
+ * Return: 0
+ */
 
-    // Loop through the lowercase alphabets
-    for (letter = 'a'; letter <= 'z'; letter++) {
-        // Check if the current character is not 'q' or 'e'
-        if (letter!= 'q' && letter!= 'e') {
-            // Print the character using putchar
-            putchar(letter);
-        }
-    }
+int main(void)
+{
+	char letter;
 
-    // New line after printing the alphabet
-    putchar('\n');
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		if (letter != 'q' && letter != 'e')
+		{
+			putchar(letter);
+		}
+	}
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
 
 
