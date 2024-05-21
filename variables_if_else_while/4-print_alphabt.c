@@ -1,16 +1,21 @@
 #include <stdio.h>
 
-/**
- * _isalpha - checks if an input is in the alphabet
- * @c: first param
- *
- * Return: 1 if letter, 0 otherwise
- */
+int main() {
+    char letter;
 
-int _isalpha(int c)
-{
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+    // Loop through the lowercase alphabets
+    for (letter = 'a'; letter <= 'z'; letter++) {
+        // Check if the current character is not 'q' or 'e'
+        if (letter!= 'q' && letter!= 'e') {
+            // Print the character using putchar
+            putchar(letter);
+        }
+    }
+
+    // New line after printing the alphabet
+    putchar('\n');
+
+    return 0;
 }
+
 
