@@ -1,62 +1,16 @@
 #include "main.h"
-#include <stdio.h>
-#include <ctype.h>
 
-/**                                                                                                                                                                                                                            
- * is_alphabetic - Checks if a character is alphabetic.                                                                                                                                                                        
- * @c: Character to check.                                                                                                                                                                                                     
- *                                                                                                                                                                                                                             
- * Return: 1 if the character is alphabetic, 0 otherwise.                                                                                                                                                                      
- */
-int is_alphabetic(char c)
-{
-    return isalpha(c);
-}
-
-int main(void)
-{
-    char test_char;
-
-    /* Testing the function with various characters */
-    test_char = 'A';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 1                                                                                                                                                                
-
-    test_char = 'a';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 1                                                                                                                                                                
-
-    test_char = '0';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 0                                                                                                                                                                
-
-    test_char = ' ';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 0                                                                                                                                                                
-     
 /**
- * is_alphabetic - Checks if a character is alphabetic.
- * @c: Character to check.
+ * _islower - returns 1 if lowercase character
+ * @c: first operand
  *
- * Return: 1 if the character is alphabetic, 0 otherwise.
+ * Return: 1 if true, 0 if false
  */
-int is_alphabetic(char c)
+
+int _islower(int c)
 {
-    return isalpha(c);
-}
+	if (c >= 97 && c <= 122)
+		return (1);
 
-int main(void)
-{
-    char test_char;
-
-    /* Testing the function with various characters */
-    test_char = 'A';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 1
-
-    test_char = 'a';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 1
-
-    test_char = '0';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 0
-
-    test_char = ' ';
-    printf("%d\n", is_alphabetic(test_char)); // Should print 0
-}
-    return 0;
+	return (0);
 }
