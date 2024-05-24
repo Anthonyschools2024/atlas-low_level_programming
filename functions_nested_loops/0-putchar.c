@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * main - prints "_putchar \n" without libraries
