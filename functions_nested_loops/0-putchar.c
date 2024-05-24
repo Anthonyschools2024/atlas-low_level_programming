@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio>
 
 /**
  * main - prints "_putchar \n" without libraries
