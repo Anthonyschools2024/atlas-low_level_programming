@@ -1,29 +1,24 @@
 #include "main.h"
 
 /**
- * main - prints "_putchar \n" without libraries
+ * main - prints "_putchr \n" without libraries
  *
  * Return: 0
  */
 
 int main(void)
 {
+	char str[] = "_putchr";
+	int i;
 
-  char str[] = "_putchar";
-  int i;
+	for (i = 0; i < 8; i++)
+	{
+		_putchr(str[i]);
+	}
 
-  for (i = 0; i < 8; i++)
+	_putchr('\n');
 
-    {
-
-      _putchar(str[i]);
-
-    }
-
-  _putchar('\n');
-
-  Return (0);
-
+	return (0);
 }
 
   
