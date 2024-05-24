@@ -1,6 +1,4 @@
-#include "main.h"
-
-/**
+**
  * _islower - returns 1 if lowercase character
  * @c: first operand
  *
