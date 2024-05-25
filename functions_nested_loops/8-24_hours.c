@@ -1,29 +1,35 @@
-#include "main.h"
-/**
- * print_square - It prints a square
- *
- * Description: it prints a square
- *
- * @size: the int used
- *
- * Return: 0
- */
-void print_square(int size)
-{
-	int i;
-	int j;
+include "main.h"
 
-	if (size <= 0)
+/**
+ * jack_bauer - prints time
+ *
+ * Return: void
+ */
+
+void jack_bauer(void)
+{
+	int a, b, c, d;
+	int control = 0;
+
+	for (a = 0; a < 3 && control == 0 ; a++)
 	{
-		_putchar('\n');
-		return;
-	}
-	for (i = 0; i < size; i++)
-	{
-		for (j = 0; j < size; j++)
+		for (b = 0; b < 10 && control == 0; b++)
 		{
-			_putchar('#');
+			for (c = 0; c < 6 && control == 0; c++)
+			{
+				for (d = 0; d < 10 && control == 0; d++)
+				{
+					_putchar('0' + a);
+					_putchar('0' + b);
+					_putchar(':');
+					_putchar('0' + c);
+					_putchar('0' + d);
+					_putchar('\n');
+
+					if (a == 2 && b == 3 && c == 5 && d == 9)
+						control = 1;
+				}
+			}
 		}
-		_putchar('\n');
 	}
 }
