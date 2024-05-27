@@ -1,15 +1,11 @@
-#include <unistd.h>
 #include "main.h"
 /**
-* _isdigit - The standard library provides a similar function: isdigit. Run man
-* isdigit to learn more
-*
-* Description - Write a function that checks for a digit
-*
-* @c: variable for the digit
-*
-* Return: Always 0 (success)
-*/
+ * _isdigit - this function returns zero.
+ *@c: this is the parameter.
+ *
+ * Return: we want zero.
+ */
+
 int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
