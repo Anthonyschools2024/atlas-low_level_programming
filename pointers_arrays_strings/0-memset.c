@@ -1,13 +1,14 @@
 #include "main.h"
+
 /**
-* _memset - sets the array to the provided input for n number of spaces
-* in the array
-* Description - for n number of spaces in array s it sets it equal to b
-* @s: the inputed array
-* @b: the given value being inputted
-* @n: the amount of spaces in array s being set to b
-* Return: Always 0 (success)
+ * _memset - fills memory with a constant byte
+ * @s: memory area
+ * @b: constant byte
+ * @n: number of bytes filled
+ *
+ * Return: pointer
 */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
@@ -16,6 +17,5 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 		s[i] = b;
 	}
-
 	return (s);
 }
