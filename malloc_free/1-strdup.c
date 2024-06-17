@@ -1,20 +1,39 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
-* main - check the code
-*
-* Return: Always 0.
+ * _strdup - this duplicates a string
+ * Description - see above comment
+ * @str: the provided string
+ * Return: Always 0 (success)
 */
-int main(void)
+char *_strdup(char *str)
 {
-	char *s;
+	char *new_str;
+	int i, count = 0;
 
-	s = _strdup("Duplicated");
-	if (s == NULL)
+	if (str == NULL)
 	{
-		printf("failed to allocate memory\n");
-		return (1);
+		return (NULL);
 	}
-	printf("%s\n", s);
-	free(s);
-	return (0);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		count++;
+	}
+
+	while (1)
+	{
+		new_str = malloc(sizeof(char) * count + 1);
+
+		if (new_str == NULL)
+		{
+			return (NULL);
+		}
+		for (i = 0; i < count; i++)
+		{
+			new_str[i] = str[i];
+		}
+		return (new_str);
+	}
 }
