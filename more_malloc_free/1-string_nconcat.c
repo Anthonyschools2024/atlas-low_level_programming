@@ -1,48 +1,51 @@
 #include "main.h"
-#include <stddef.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * string_nconcat - concats two strings in a new memory alloc
- * @s1: first string
- * @s2: second string
- * @n: number of bytes of second string
- *
- * Return: pointer
+ * string_nconcat - combines two strings with a number of bytes
+ * @s1: string 1
+ * @s2: string 2
+ * @n: the bytes
+ * Return: pointer to new memory of s1+s2, or NULL
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int s1_size = 0;
-	unsigned int s2_size = 0;
-	unsigned int i, j;
-	char *s = NULL;
-	unsigned int s_size = 0;
+	char *combined;
+	unsigned int lens1 = 0, lens2 = 0, lentotal = 0;
+	unsigned int index;
 
-	if (s1 == NULL)
-		s1_size = 0;
-	else
-		for (i = 0; s1[i] != '\0'; i++)
-			s1_size++;
-	if (s2 == NULL)
-		s2_size = 0;
-	else
-		for (i = 0; s2[i] != '\0'; i++)
-			s2_size++;
-
-	if (s2_size > n)
-		s_size = s1_size + n + 1;
-	else
-		s_size = s1_size + s2_size + 1;
-	s = malloc(s_size);
-
-	if (s == NULL)
+	if (s1 == NULL)	/*if null treat as empty*/
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)	/*if null treat as empty*/
+	{
+		s2 = "";
+	}
+	while (s1[lens1])	/*find length of s1*/
+	{
+		lens1++;
+	}
+	while (s2[lens2] && lens2 < n)	/*find length of s2 with n bytes*/
+	{
+		lens2++;
+	}
+	lentotal = lens1 + lens2 + 1;	/*total of memory plus null byte*/
+	combined = malloc(sizeof(char) * lentotal);	/*make memory*/
+	if (combined == NULL)	/*if fail null*/
+	{
 		return (NULL);
-
-	for (i = 0; i < s1_size; i++)
-		s[i] = s1[i];
-	for (j = 0; j < s2_size && j < n; j++)
-		s[s1_size + j] = s2[j];
-	s[s1_size + j] = '\0';
-
-	return (s);
+	}
+	lentotal = 0;
+	for (index = 0; s1[index]; index++)	/*add s1 to combined*/
+	{
+		combined[lentotal++] = s1[index];
+	}
+	for (index = 0; s2[index] && index < n; index++)	/*add s2 of n bytes*/
+	{
+		combined[lentotal++] = s2[index];
+	}
+	combined[lentotal] = '\0';	/*add null byte*/
+	return (combined);
 }
