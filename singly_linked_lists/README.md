@@ -1,0 +1,1 @@
+These next set of task are for me to understand how to use singlely linked-list, or even linked list overall as a operation. It will guide me through the fundimentals of linked list. 

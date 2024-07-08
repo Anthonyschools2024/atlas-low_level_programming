@@ -1,25 +1,30 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include "dog.h"
 
-typedef struct dog {
-    // Assuming the struct has fields like name, age, etc.
+typedef struct s_dog {
+    // Assuming dog_t has fields like name, age, breed, etc.
     char *name;
     int age;
+    char *breed;
 } dog_t;
 
 void free_dog(dog_t *d) {
     if (d == NULL) {
-        fprintf(stderr, "Error: Attempted to free a null pointer.\n");
-        exit(EXIT_FAILURE); // Exit the program with failure status
+        // If the pointer is NULL, nothing needs to be done.
+        return;
     }
 
-    // Freeing dynamically allocated memory within the struct
+    // Freeing individual fields of the dog_t structure
     if (d->name!= NULL) {
-        free(d->name);
+        free(d->name); // Freeing the memory allocated for the name field
+    }
+    if (d->breed!= NULL) {
+        free(d->breed); // Freeing the memory allocated for the breed field
     }
 
-    // Freeing the struct itself
+    // Freeing the memory allocated for the dog_t structure itself
     free(d);
 
-    // No return statement needed; function returns control to caller implicitly
+    // Setting the pointer to NULL to avoid dangling pointers
+    d = NULL;
 }
