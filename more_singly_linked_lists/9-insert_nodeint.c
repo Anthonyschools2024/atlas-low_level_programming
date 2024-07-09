@@ -1,19 +1,32 @@
 #include "lists.h"
+
 /**
- * insert_nodeint_at_index - inserts a new node at a specific
- * position in the singly linked list
- * Description - makes a new node with data passed to it and
- * places it in the given position in the singly linked list
- * @head: the head node passed to the funciton
- * @idx: the position in the linked list for the new node
- * @n: data to be passed to the new node
- * Return: address of new node
-*/
+ * insert_nodeint_at_index - inserts new node
+ * at given position
+ * @head: head of list
+ * @idx: index of list where new node is added
+ * @n: int element
+ * Return: the address of new node or NULL if it fail
+ */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *temp = *head;
+	unsigned int i;
 	listint_t *new;
-	listint_t *temp2;
+	listint_t *h;
+
+	h = *head;
+
+	if (idx != 0)
+	{
+		for (i = 0; i < idx - 1 && h != NULL; i++)
+		{
+			h = h->next;
+		}
+	}
+
+	if (h == NULL && idx != 0)
+		return (NULL);
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
@@ -21,16 +34,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	new->n = n;
 
-	while (idx > 1)
+	if (idx == 0)
 	{
-		temp = temp->next;
-		idx--;
-		if (temp == NULL)
-			return (NULL);
+		new->next = *head;
+		*head = new;
+	}
+	else
+	{
+		new->next = h->next;
+		h->next = new;
 	}
 
-	temp2 = temp->next;
-	temp->next = new;
-	new->next = temp2;
 	return (new);
 }
