@@ -1,0 +1,1 @@
+In this project we will be going over doubly linked list. The goal is to understand when and how to use this concept. It shouldnt be any different than singly linked list.
