@@ -1,1 +1,1 @@
-In this project we will be going over doubly linked list. The goal is to understand when and how to use this concept. It shouldnt be any different than singly linked list.
+In this project we will be learning about doubly linked list. We must understand how and when th implmet such concept. It should really be any difdferent than singly linked list just with some added steps.
