@@ -1,30 +1,52 @@
 #include "lists.h"
+
 /**
- * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
- * @head: Double pointer to the head of the list.
- * @n: Integer value to be added to the new node.
+ * add_dnodeint_end - adds new tail node to doubly linked dlistint_t list
+ * @head: double pointer to head node of list
+ * @n: value to store in new tail node
  *
- * Return: Address of the new element, or NULL if it failed.
+ * Return: address of new tail node or NULL if failed
  */
+
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-    dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	dlistint_t *new_tail; /* pointer to new tail node */
+	dlistint_t *current_node; /* pointer to current node */
 
-    if (!new_node) /* Check if memory allocation was successful */
-        return NULL;
+	if (head == NULL) /* check if head is NULL */
+	{
+		return (NULL); /* return NULL */
+	}
 
-    new_node->n = n; /* Set the value of the new node */
+	new_tail = malloc(sizeof(dlistint_t)); /* malloc for new tail */
+	if (new_tail == NULL) /* if malloc fails */
+	{
+		return (NULL); /* return NULL */
+	}
 
-    if (*head == NULL) { /* If the list is empty */
-        new_node->next = NULL;
-        new_node->prev = NULL;
-        *head = new_node;
-    } else { /* If the list has elements */
-        new_node->next = NULL;
-        new_node->prev = (*head)->prev;
-        (*head)->prev->next = new_node;
-        (*head)->prev = new_node;
-    }
+	new_tail->n = n; /* set value of new tail */
+	new_tail->next = NULL; /* set next of new tail to NULL */
 
-    return new_node;
+	if (*head == NULL) /* if list is empty */
+	{
+		new_tail->prev = NULL; /* prev of new tail to NULL */
+		new_tail->next = NULL; /* next of new tail to NULL */
+		*head = new_tail; /* set pointer to head to new tail */
+	}
+
+	else /* if list is not empty */
+	{
+		current_node = *head; /* set current node to head */
+
+		while (current_node->next != NULL) /* traverse list until NULL */
+		{
+			current_node = current_node->next; /* move to next node */
+		}
+
+		current_node->next = new_tail; /* next of current node to new tail */
+		new_tail->prev = current_node; /* prev of new tail to current node */
+		new_tail->next = NULL; /* set next of new tail to NULL */
+	}
+
+	return (new_tail); /* return address of new tail */
 }
