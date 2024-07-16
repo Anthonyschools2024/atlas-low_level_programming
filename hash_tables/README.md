@@ -1,0 +1,1 @@
+In this preject we will be learning about hash tables.
