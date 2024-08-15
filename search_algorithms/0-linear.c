@@ -1,4 +1,4 @@
-#include "schalg.h"
+#include "search_algos.h"
 
 /**
  * linear_search - finds first index of a value in an array using linear search
